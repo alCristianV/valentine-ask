@@ -10,7 +10,6 @@ body {
     background-image: url("heart-bg.jpg");
     background-size: cover;
     font-family: "Pixelify Sans", sans-serif;
-    cursor: none;
     overflow: hidden;
 }
 
@@ -19,6 +18,7 @@ body {
     display: flex;
     text-align: center;
     cursor:pointer;
+    flex-direction: column;
 }
 
 @keyframes pulse {
@@ -48,22 +48,19 @@ body {
 }
 
 .letter-window{
-    width: 90vw;
-    max-width: 800px;
-    aspect-ratio: 3/2;
-    padding: 20px 20px 0 20px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("window.png");
+    /* background-image: url("window.png"); */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 12px;
     gap: 1px;
-    padding-top: 180px;
 
     transform: scale(1.2);
     opacity: 0;
@@ -76,31 +73,29 @@ body {
 }
 
 h1 {
-    font-size: 30px;
-    margin:0;
+    font-size: 300%;
+    margin:10;
 }
 
 p {
-    font-size: 40px;
+    font-size: 400%;
 }
 
 /* Cat */
 
 .cat {
-    width: 250px;
-    margin: 10px 0;
+max-width:100%; height:auto;
     transition: width 0.4s ease;
 }
 
 .letter-window.final .cat {
-    width: 180px;
+    width: 9%;
 }
 
 /* buttons */
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 30px;
     position: relative;
 }
 
@@ -109,14 +104,14 @@ p {
 }
 
 .btn {
-    width: 120px;
+    width: 50vw;
     cursor: pointer;
     user-select: none;
 }
 
 .yes-btn,
 .no-btn {
-width: 120px;
+width: 50vw;
 height: auto;
 display: inline-block;
 }
@@ -143,6 +138,7 @@ display: inline-block;
     padding: 10px 20px;
     background-color: rgba(255,240,240,0.5);
     border-radius: 12px;
+    margin-top: 12px;
 }
 
 #gif {

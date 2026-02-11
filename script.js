@@ -96,3 +96,37 @@ yesBtn.addEventListener("click", () => {
     catImg.src = gifs[index];
   }, 1500);
 });
+
+let x = 100;
+let y = 100;
+
+let speedX = 3;
+let speedY = 3;
+
+function animate() {
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+
+  const gifWidth = gif.offsetWidth;
+  const gifHeight = gif.offsetHeight;
+
+  x += speedX;
+  y += speedY;
+
+  // Bounce on left/right walls
+  if (x + gifWidth >= windowWidth || x <= 0) {
+    speedX *= -1;
+  }
+
+  // Bounce on top/bottom walls
+  if (y + gifHeight >= windowHeight || y <= 0) {
+    speedY *= -1;
+  }
+
+  gif.style.left = x + "px";
+  gif.style.top = y + "px";
+
+  requestAnimationFrame(animate);
+}
+
+animate();
